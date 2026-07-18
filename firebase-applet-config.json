@@ -3,9 +3,9 @@
   "appId": "1:941008510149:web:d4bd6dd7cf906f25dba4ac",
   "apiKey": "AIzaSyCtoH_FxQ1Q5zQtw8EO6c5F9ckcdGaVoyA",
   "authDomain": "thermal-sunspot-g7c1c.firebaseapp.com",
-  "firestoreDatabaseId": "ai-studio-fberpsystem-8fef96e4-efe5-401e-b216-e19d9a9b31a9",
   "storageBucket": "thermal-sunspot-g7c1c.firebasestorage.app",
   "messagingSenderId": "941008510149",
   "measurementId": "",
-  "oAuthClientId": "941008510149-48dd66ge2p0rgl38fc1obtktulraclia.apps.googleusercontent.com"
+  "oAuthClientId": "941008510149-48dd66ge2p0rgl38fc1obtktulraclia.apps.googleusercontent.com",
+  "recaptchaSiteKey": ""
 }

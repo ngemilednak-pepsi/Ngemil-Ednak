@@ -28,8 +28,9 @@ import {
   SystemSettings,
   RolePermissions
 } from '../types';
-import { db } from './firebase';
+import { db, getAccessToken } from './firebase';
 import { doc, onSnapshot, setDoc } from 'firebase/firestore';
+import { writeCollectionToSheet } from './googleSheets';
 
 
 // Key names for LocalStorage
@@ -666,11 +667,19 @@ export class LocalDb {
     try {
       localStorage.setItem(key, JSON.stringify(data));
       
-      // Background Sync to Firestore
+      // Background Sync to Firestore & Google Sheets
       if (SYNC_KEYS.includes(key)) {
         setDoc(doc(db, key, "all"), { data }).catch(err => {
           console.error(`Failed to sync key ${key} to Firestore:`, err);
         });
+
+        const sheetId = localStorage.getItem('erp_google_sheet_id');
+        const token = getAccessToken();
+        if (sheetId && token) {
+          writeCollectionToSheet(token, sheetId, key, data as any).catch(err => {
+            console.error(`Failed to sync key ${key} to Google Sheets:`, err);
+          });
+        }
       }
     } catch (e) {
       console.error(`Error saving database key: ${key}`, e);
