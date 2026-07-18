@@ -1,0 +1,6 @@
+{
+  "name": "F&B ERP System",
+  "description": "Sistem ERP lengkap untuk bisnis F&B multi-outlet, mencakup modul POS, Inventaris, BOM, Produksi, Keuangan, Kepegawaian, CRM, dan Analisis Bisnis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
